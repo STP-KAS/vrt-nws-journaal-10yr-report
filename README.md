@@ -67,9 +67,9 @@ Source: [CIM TV reglement](https://www.cim.be/sites/default/files/2026-03/reglem
 | VRT annual report 2016: https://www.vrt.be/nl/assets/files/2024-09/VRTJaarverslag2016.pdf | Daily/weekly reach of journaals 2016, deredactie.be visitors |
 | VRT annual report 2017: https://www.vrt.be/nl/assets/files/2024-09/LRN-VRT-Jaarverslag-2017-web-low-2.pdf | Eén market share 2016–2017 (CIM/GfK) |
 | VRT annual report 2018: https://www.vrt.be/nl/assets/files/2024-09/VRTJaarverslag2018WEB.pdf | Journaal reach 2017–2018, VRT NWS update (14 Jun 2018), site/app visitors |
-| VRT annual report 2019: https://www.vrt.be/nl/assets/files/2024-09/VRT_Jaarverslag-2019-CORPS-lowlowres.pdf | Journaal reach 2019, site visitors |
+| VRT annual report 2019: https://www.vrt.be/nl/assets/files/2024-09/VRT_Jaarverslag-2019-CORPS-lowlowres.pdf | Journaal reach 2019, site visitors, news performance measures 2016–2019 |
 | VRT annual report 2020: https://www.vrt.be/nl/assets/files/2024-09/VRT_jaarverslag2020_A4_030_pages_Compressed.pdf | Journaal reach 2020, 27 Mar 2020 record (1,748,370), site visitors |
-| VRT annual reports 2021, 2024, 2025: https://www.vrt.be/nl/assets/files/2024-09/Jaarverslag2021.pdf · https://www.vrt.be/nl/assets/files/2025-06/Jaarverslag-2024.pdf · https://www.vrt.be/nl/assets/files/2026-07/JVS_2025_0.pdf | Checked; no journaal reach published (→ "not found") |
+| VRT annual reports 2021, 2024, 2025: https://www.vrt.be/nl/assets/files/2024-09/Jaarverslag2021.pdf · https://www.vrt.be/nl/assets/files/2025-06/Jaarverslag-2024.pdf · https://www.vrt.be/nl/assets/files/2026-07/JVS_2025_0.pdf | No journaal reach published (→ "not found"); VRT NWS costs and news KPIs 19–21, 23, 31 |
 | VRT press release, annual report 2025: https://communicatie.vrt.be/vrt-bereikt-recordaantal-vlamingen-en-versnelt-digitale-groei-in-2025 | Context (no journaal figure) |
 | VRT – 2024 VRT MAX year review: https://communicatie.vrt.be/2024-het-jaar-van-een-nieuwe-groeispurt-voor-vrt-max | VRT NWS Journaal = #2 video title on VRT MAX in 2024 |
 | VRT NWS – Martine Tanghe's last Journaal: https://www.vrt.be/vrtnws/nl/2020/11/30/martine-tanghe-op-bezoek-bij-koning-filip-ik-ben-blij-en-trots/ | 2,001,867 viewers, best-watched Journaal ever |
@@ -77,6 +77,9 @@ Source: [CIM TV reglement](https://www.cim.be/sites/default/files/2026-03/reglem
 | VRM – supervision report VRT 2017: https://www.vlaamseregulatormedia.be/sites/default/files/2025-01/vrt2017.pdf | Journaal reach 2017, vrtnws.be visitors 2017 |
 | VRM – supervision report VRT 2020 (SD 2.1): https://www.vlaamseregulatormedia.be/nl/over-vrm/rapporten/2020/toezichtsrapport-vrt/toezichtsrapport-vrt-2020/strategische-doelstelling-2-0 | Confirms 2019/2020 journaal reach |
 | imec-SMIT-VUB – Digital News Report Flanders policy brief: https://smit.research.vub.be/en/policy-brief-93-digital-news-report-2025-wider-access-weaker-pull-more-channels-less-interest-and-a | Survey: TV evening news use 73% (2017) → 51% (2026) |
+| imec.digimeter 2025: https://www.imec.be/sites/default/files/2026-03/imec.digimeter-2025-rapport.pdf | Reasons for the decline: live TV, news via social media and search (pp. 23, 39) |
+| VRT management contract 2026–2030: https://www.vrt.be/nl/assets/files/2025-10/BHO_VRT_2025_digitaal-14-10-2025.pdf | News targets 2026–2030 (KPIs 11, 13, 14, 16, 18) |
+| Eurostat HICP Belgium (prc_hicp_aind): https://ec.europa.eu/eurostat/api/dissemination/statistics/1.0/data/prc_hicp_aind?geo=BE&coicop=CP00&unit=INX_A_AVG&format=JSON | Inflation adjustment of news costs (own calculation) |
 | Statistiek Vlaanderen – Nieuwsgebruik: https://www.vlaanderen.be/statistiek-vlaanderen/media-en-mediagebruik/nieuwsgebruik | Survey: weekly TV news use 70% (2025), −8 pp vs 2021 |
 
 **Secondary sources** (media or reference works reporting other people's data):
@@ -85,6 +88,7 @@ Source: [CIM TV reglement](https://www.cim.be/sites/default/files/2026-03/reglem
 |---|---|
 | Showbizzsite – viewing figures 22 March 2016 (reproduces the CIM day top 10): https://www.showbizzsite.be/nieuws/kijkcijfers-dinsdag-22-maart-2016-1499876 | Brussels attacks day (before the CIM online archive starts) |
 | TVvisie – KIES24 viewing figures: https://tvvisie.be/nieuws/belgie/kijkcijfers-meer-dan-2-miljoen-kijkers-voor-kies24-op-vrt-1_131238/ | Election night 9 June 2024 |
+| VRT annual report 2023, copy hosted by Mediaspecs: https://www.mediaspecs.be/wp-content/uploads/2024/06/vrt-jaarverslag-2023.pdf | VRT NWS cost 2023, news KPIs 2023 (no copy found on vrt.be) |
 | Wikipedia – VRT NWS journaal: https://nl.wikipedia.org/wiki/VRT_NWS_journaal | Format/studio timeline only (2016 studio, 2021 studio, 2022 rename); no viewing figures taken from it |
 
 ---
@@ -169,6 +173,42 @@ The per-broadcast columns are computed from the CIM daily Top 20 (North, 4+ incl
 | 9 Jun 2024 | Federal/regional elections | The evening Journaal was replaced by the KIES24 election marathon: 2,151,277 viewers reached, peak 987,266 at 19:38 ([TVvisie](https://tvvisie.be/nieuws/belgie/kijkcijfers-meer-dan-2-miljoen-kijkers-voor-kies24-op-vrt-1_131238/)). Not counted in the 19:00 averages. |
 | 2024 | VRT MAX: "VRT NWS Journaal" is the #2 video title of the year | ([VRT](https://communicatie.vrt.be/2024-het-jaar-van-een-nieuwe-groeispurt-voor-vrt-max)) |
 
+
+### Reasons for the decline (sourced)
+
+This report does not measure how much each factor contributes. It lists only the factors that the sources name or measure. Figures and links are in [`data/news_funding_kpis_drivers.csv`](data/news_funding_kpis_drivers.csv).
+
+* **Less TV news, more news avoidance.** In the Digital News Report Flanders, the share of news users who watch TV evening news fell from **73% (2017) to 51% (2026)**, and among young people from about 60% to about one in three. Daily news use fell from 89% to 72%. The share who sometimes or often **avoid the news** rose from **48% to 66%**, and the share very or extremely interested in news fell from 62% to 36% (59% in 2021) ([SMIT/VUB policy brief 93](https://smit.research.vub.be/en/policy-brief-93-digital-news-report-2025-wider-access-weaker-pull-more-channels-less-interest-and-a)).
+* **News moves to smartphones, social media and search.** In the same survey, social media is the main news source for 16% of all news users and **43% of 18–24-year-olds (23% in 2017)**. Going directly to news sites and apps rose from 32% to 44%. In the [imec.digimeter 2025](https://www.imec.be/sites/default/files/2026-03/imec.digimeter-2025-rapport.pdf) (p. 39), 44% of Flemings follow news via social media daily (18–24: 65%, 25–34: 56%), close to national TV news (51%, −2 points in a year). 33% follow news via search engines daily (+11 points, which Digimeter links to AI overviews).
+* **Weekly TV news use** fell to 70% in 2025, 8 points lower than in 2021 ([Statistiek Vlaanderen](https://www.vlaanderen.be/statistiek-vlaanderen/media-en-mediagebruik/nieuwsgebruik)).
+* **Younger viewers watch little live TV.** Daily live TV viewing is 40% of Flemings in 2025 (56% in 2020). It is 14% among 25–34-year-olds and 17% among 18–24-year-olds, against 65% among 65–74-year-olds (Digimeter p. 23). A fixed-time broadcast like the Journaal depends on live viewing.
+* **Part of the audience moved to VRT NWS online.** VRT NWS online had **270,140 daily unique visitors in 2016 and 960,009 in 2020** (VRT annual reports; see the master table). In the Digital News Report, weekly use of VRT NWS online is 40% (from 33%). The Journaal was the #2 video title on VRT MAX in 2024. Since 2020 CIM includes online viewing of the broadcast in the figures here, but news read on the site or app is not TV viewing.
+* **Trust in VRT news stayed stable.** 73–76% have (much) trust in VRT TV as a news source in every year with data: 76% (2016), 73% (2019), 75% (2025). General trust in news fell from 57% (2017) to just under half (DNR). The sources therefore do not point to falling trust in VRT as a cause.
+* **Competition from VTM NIEUWS** follows the same trend (557k → 532k at 19:00, 2017–2025; see above). VRT's share of the combined 19:00 news audience stayed at about 60%, so the decline is not a shift from VRT to VTM.
+* **Measurement changes** (online viewing added in 2020, consolidated daily figures from July 2023) push the later years up. They do not cause the decline, but they make it look slightly smaller (see *How*).
+
+### Public funding vs results
+
+VRT's public funding as a whole (pillar 1: 277.1 M EUR in 2015, 319.4 M EUR in 2025; −15% in real terms) and all management-contract targets are analysed in the companion report: [**Public funding vs results** (VRT overall report)](https://github.com/STP-KAS/vrt-overall-ratings-10yr-report#public-funding-vs-results). The news-specific figures are below. Data: [`data/news_funding_kpis_drivers.csv`](data/news_funding_kpis_drivers.csv) and [`data/news_cost_real_owncalc.csv`](data/news_cost_real_owncalc.csv).
+
+* **What news costs.** From 2021 VRT books all costs of its Information department under "VRT NWS", including the TV and radio news programmes: **68.9 M EUR (2021), 82.1 M EUR (2023), 92.5 M EUR (2024) and 92.3 M EUR (2025)** (VRT annual reports, cost tables "andere aanbodsmerken"). That is +34% nominal from 2021 to 2025, or **+10% in 2025 prices** (83.6 → 92.3 M EUR; own calculation with the Eurostat HICP for Belgium). Per inhabitant of Flanders it is 10.36 EUR (2021) and 13.45 EUR (2025) (own calculation). 2022: **not found** (the 2022 jaarbeeld has no cost tables). Before 2021 VRT reported only the cost of the digital/other VRT NWS offer (7.9 M EUR in 2016 to 17.6 M EUR in 2020), with the TV and radio news included in the channel costs. These figures **cannot be compared** with 2021 onwards. A separate cost for the Journaal itself: **not found**.
+* **News targets in the management contracts and whether they were met (as reported by VRT):**
+
+| Target | 2016–2020 | 2021–2025 | Result |
+|---|---|---|---|
+| Weekly reach of VRT's total news offer ≥ 75% | 81.0% (2016), 77.5% (2017), 78.9%, 79.7%, 82.6% (2020) | KPI 19: 87.0% (2021), 82.4%, 82.0%, 81.7%, 83.2% (2025) | **met every year** |
+| Weekly news reach among 16–24 ≥ 65% (from 2021) | 78.6% (2020, no target) | 80.8%, 76.6%, 84.4%, 79.8%, 86.7% | **met every year** |
+| Trust in VRT news (no numeric target until 2026) | TV 76% (2016), 73% (2019), 75.4% (2020) | KPI 20: TV 73–75%; vrtnws.be 66% (2021) → 71% (2025) | stable; 2017–2018 not found on a comparable question |
+| Investigative journalism | ≥ 10 Pano reports: 17 in 2019 (met) | KPI 23: ≥ 15 stories a year | 2021–2025 counts not copied here (see the annual reports) |
+| Culture items in Het Journaal ≥ 365 a year | 610 (2019) | KPI 31: 647 (2024), 662 (2025) | met |
+| Impartiality | – | KPI 21: monitored (VRM study 2024); numeric result not found | – |
+| Journaal viewers or market share | not found | not found | **no such target** |
+
+* **Reading the two together.** The news targets measure weekly reach over all platforms and trust. They do not measure TV audiences. VRT met every reach target while the 19:00 Journaal lost about a tenth of its viewers (2017–2025) and the daily reach of all VRT TV journaals fell from 1,919,559 (2016) to 1,749,894 (2019) (VRT annual reports; 2021–2025 not found). Over 2021–2025 the cost of VRT news rose by 10% in real terms, while news reach stayed at 82–87% and the TV audience of the Journaal kept falling slowly.
+* **2026–2030 contract** ([PDF](https://www.vrt.be/nl/assets/files/2025-10/BHO_VRT_2025_digitaal-14-10-2025.pdf)): trust in VRT NWS ≥ 70% (KPI 11, the first numeric trust target), VRT NWS weekly reach ≥ 75% and ≥ 65% of each relevant group (KPI 14), 15 investigative stories rising to 20 (KPI 13), analysis offer reaching ≥ 45% rising to 50% (KPI 16), and ≥ 365 culture items in the Journaal (KPI 18). First results are due by 1 June 2027.
+
+![News funding vs results](charts/news_funding_vs_results.png)
+
 ---
 
 ## Other
@@ -180,6 +220,7 @@ The per-broadcast columns are computed from the CIM daily Top 20 (North, 4+ incl
 * **Market share of the Journaal itself** per year: not found (only the channel's market share is given).
 * **Daily reach of all VRT journaals, 2021–2025:** not found (VRT annual reports stopped publishing it).
 * **Online/VRT MAX viewers of the Journaal as a separate series:** not found (CIM folds online viewing into the totals).
+* **News costs:** VRT NWS cost for 2022, a separate cost of the Journaal, and a comparable news cost before 2021: not found. Comparable trust figures for 2017–2018 and a numeric impartiality result: not found. The Statbel CPI website could not be accessed, so the Eurostat HICP for Belgium is used for real terms.
 * **2016 before October:** not in the CIM online archive. Only single days are available via press reports (e.g. 22 Mar 2016).
 
 **Corrections**
@@ -207,10 +248,12 @@ The per-broadcast columns are computed from the CIM daily Top 20 (North, 4+ incl
 | `data/cim_days_available.csv` | Days for which CIM returned a Top 20 (the denominator for coverage). |
 | `data/like_for_like_comparisons.csv` | Same-calendar-day comparisons per broadcast, with whether both periods share the same value basis. |
 | `data/consolidation_check_news_daily_vs_yearly.csv` | News broadcasts found in both the CIM daily Top 20 and the yearly Top 100, with the ratio daily/yearly (size of the same-day vs Live+7 gap). |
-| `charts/*.png` | The two charts above. |
-| `scripts/` | `cim_fetch.py` (download), `parse_cim.py` (extract), `analyse.py` (aggregate + charts + master CSV), `consolidation_check.py` (daily vs yearly Top 100 check; needs the local cache). |
+| `data/news_funding_kpis_drivers.csv` | VRT NWS costs (two scopes), news targets and results 2016–2025, 2026–2030 news targets, and the sourced indicators behind 'Reasons for the decline'. |
+| `data/news_cost_real_owncalc.csv` | VRT NWS cost in 2025 prices and per inhabitant, 2021–2025 (own calculation). |
+| `charts/*.png` | The three charts above (all show the COVID-19 years 2020–2021 as a grey band). |
+| `scripts/` | `cim_fetch.py` (download), `parse_cim.py` (extract), `analyse.py` (aggregate + charts + master CSV), `consolidation_check.py` (daily vs yearly Top 100 check; needs the local cache), `news_funding_src.py` (news costs, targets and drivers as code + the funding chart). |
 
-To reproduce (Python with `requests`, `pandas`, `matplotlib`): `python scripts/cim_fetch.py 2016-09-01 2026-10-02 4 && python scripts/parse_cim.py && python scripts/analyse.py && python scripts/consolidation_check.py`. The fetch script caches CIM's responses in a local `raw/` folder, which is not part of this repository.
+To reproduce (Python with `requests`, `pandas`, `matplotlib`): `python scripts/cim_fetch.py 2016-09-01 2026-10-02 4 && python scripts/parse_cim.py && python scripts/analyse.py && python scripts/consolidation_check.py && python scripts/news_funding_src.py`. The fetch script caches CIM's responses in a local `raw/` folder, which is not part of this repository.
 
 **Data and reuse note**
 * The bulk raw downloads (one CIM HTML response per day, ~3,700 files) and the downloaded PDF reports are **not** published here. The reason is that CIM's public results carry no explicit open licence, and CIM's rules require correct source attribution. This repository contains only **derived tables** (the Journaal and VTM news rows plus yearly/monthly aggregates). Every row cites its source URL and metric.

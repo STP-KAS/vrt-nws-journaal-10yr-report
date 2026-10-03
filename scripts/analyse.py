@@ -136,6 +136,8 @@ for k, col in [("VTM NIEUWS 19:00 (context)", "#c8102e")]:
     g = mon[mon.broadcast == k]
     ax.plot(g["date"], g["mean"] / 1000, color=col, lw=1, ls=":", alpha=.7, label="VTM NIEUWS 19:00 (context)")
 top = mon["mean"].max() / 1000 * 1.12
+ax.axvspan(pd.Timestamp("2020-01-01"), pd.Timestamp("2021-12-31"), color="grey", alpha=.08, zorder=0)
+ax.text(pd.Timestamp("2020-12-15"), top * 0.17, "COVID-19 years", ha="center", fontsize=8, color="grey")
 ev = [("2020-03-15", "COVID-19 lockdown"), ("2020-11-30", "Martine Tanghe\nfarewell"), ("2022-02-24", "Russia invades\nUkraine"),
       ("2023-05-01", "Eén → VRT 1"), ("2024-06-09", "Elections\n9 June 2024")]
 for d, t in ev:
