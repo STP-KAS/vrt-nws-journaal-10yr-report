@@ -1,0 +1,19 @@
+date,programme,channel,daily_top20_viewers,daily_start,yearly_top100_viewers,ratio_daily_to_yearly,basis,source,source_url,method
+2018-06-18,HET 7 UUR-JOURNAAL,EEN,1337923,19:17:22,1337900,1.0,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2018-03-02,NIEUWS 19U VTM,VTM,812194,18:59:43,816300,0.995,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2019-01-21,HET 7 UUR-JOURNAAL,EEN,1134694,19:00:06,1134700,1.0,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2019-12-09,NIEUWS 19U VTM,VTM,782700,18:59:56,786400,0.9953,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2020-11-30,HET 7 UUR-JOURNAAL,EEN,2008425,19:00:05,2030600,0.9891,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2020-01-27,NIEUWS 19U VTM,VTM,1109798,18:59:54,1117800,0.9928,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2020-03-22,HET 1 UUR-JOURNAAL,EEN,1041306,13:00:04,1041400,0.9999,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2021-01-20,HET 7 UUR-JOURNAAL,EEN,1360441,19:00:04,1367700,0.9947,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2021-08-01,HET 1 UUR-JOURNAAL,EEN,1254726,13:23:15,1249300,1.0043,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2021-02-01,NIEUWS 19U VTM,VTM,841442,18:59:53,847900,0.9924,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2022-02-24,HET 7 UUR-JOURNAAL,EEN,1215236,19:00:02,1229300,0.9886,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2022-02-18,NIEUWS 19U VTM,VTM,897816,18:59:32,899600,0.998,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2023-03-20,HET 7 UUR-JOURNAAL,VRT 1,1192097,19:00:03,1199300,0.994,daily same-day vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2023-11-20,NIEUWS 19U VTM,VTM,804572,18:59:29,802100,1.0031,daily consolidated Live+7 vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2024-07-01,HET 7 UUR-JOURNAAL,VRT 1,1178300,20:14:09,1178300,1.0,both Live+28 incl. online,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2024-01-17,NIEUWS 19U VTM,VTM,775067,18:59:48,771600,1.0045,daily consolidated Live+7 vs yearly Live+7,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2025-01-27,HET 7 UUR-JOURNAAL,VRT 1,1084008,19:00:04,1084000,1.0,both Live+28 incl. online,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation
+2025-01-06,NIEUWS 19U VTM,VTM,735655,18:59:48,735700,0.9999,both Live+28 incl. online,"CIM daily Top 20 and CIM yearly Top 100 (North, 4+ incl. guests)",https://www.cim.be/nl/televisie,own calculation

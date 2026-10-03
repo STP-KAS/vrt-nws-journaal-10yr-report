@@ -1,11 +1,22 @@
 """Build annual/monthly aggregates and charts from data/cim_daily_top20_news.csv.
 Daily figures = CIM daily Top 20, North (Flanders + Dutch-speaking Brussels), 4+ incl. guests,
-Live+VOSDAL (+ online viewing from 2020 onwards, see README methodology)."""
+Live+VOSDAL (+ online viewing from 2020 onwards) until late June 2023; from 1 Jul 2023 the published daily
+values are CIM's consolidated figures (Live+7; Live+28 incl. online from 1 Jul 2024). See README > How > methodology breaks."""
 import os, pandas as pd, numpy as np
 import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt, matplotlib.dates as mdates
 ROOT = os.path.join(os.path.dirname(__file__), ".."); D = os.path.join(ROOT, "data"); C = os.path.join(ROOT, "charts")
 os.makedirs(C, exist_ok=True)
 CIM = "https://www.cim.be/nl/televisie"
+BREAK_CONS7, BREAK_CONS28 = pd.Timestamp("2023-07-01"), pd.Timestamp("2024-07-01")
+def basis(d):
+    """Value basis of a CIM daily Top-20 figure on date d (own finding, see README)."""
+    if d < pd.Timestamp("2020-01-01"): return "same-day (Live+VOSDAL+Guests), TV only"
+    if d < BREAK_CONS7: return "same-day (Live+VOSDAL+Guests) incl. same-day online"
+    if d < BREAK_CONS28: return "consolidated Live+7 (+Guests, incl. online)"
+    return "consolidated Live+28 incl. online (+Guests)"
+def year_basis(y):
+    return {2023: "Jan-Jun same-day; Jul-Dec consolidated Live+7", 2024: "Jan-Jun consolidated Live+7; Jul-Dec Live+28 incl. online"}.get(
+        y, basis(pd.Timestamp(f"{y}-06-30")))
 raw = pd.read_csv(os.path.join(D, "cim_daily_top20_news.csv"))
 alldays = pd.read_csv(os.path.join(D, "cim_days_available.csv"))  # date, n_rows (days for which CIM returned a Top 20)
 alldays["date"] = pd.to_datetime(alldays.date)
@@ -25,7 +36,7 @@ daily = []
 for k, s in series.items():
     t = s[["viewers", "rank", "start", "duration"]].copy(); t["broadcast"] = k; daily.append(t.reset_index())
 daily = pd.concat(daily); daily["source_url"] = CIM
-daily["metric"] = "CIM daily Top 20, North, 4+, Live+VOSDAL+Guests (+same-day online from 2020)"
+daily["metric"] = "CIM daily Top 20, North, 4+ incl. guests; value basis: " + daily["date"].map(basis)
 daily.to_csv(os.path.join(D, "daily_journaal_viewers.csv"), index=False)
 
 def yr_stats(s, days, label):
@@ -48,7 +59,7 @@ def yr_stats(s, days, label):
 rows = []
 for k, s in series.items(): rows += yr_stats(s, alldays, k)
 ann = pd.DataFrame(rows); ann["source_url"] = CIM
-ann["metric"] = "CIM daily Top 20 viewers (4+, North, Live+VOSDAL+Guests; +Online from 2020)"
+ann["metric"] = "CIM daily Top 20 viewers (4+ incl. guests, North)"; ann["value_basis"] = ann.year.map(year_basis)
 ann.to_csv(os.path.join(D, "annual_from_cim_daily_top20.csv"), index=False)
 # Same-period comparison Jan 1 - Sep 30 (to compare 2026 YTD fairly)
 ytd = []
@@ -58,7 +69,32 @@ for k, s in series.items():
         ytd.append(dict(year=y, broadcast=k, jan_sep_mean=round(v.mean()) if v.notna().any() else None,
                         jan_sep_weekday_mean=round(v[g.date.dt.weekday.values < 5].mean()) if v.notna().any() else None,
                         coverage_pct=round(100*v.notna().sum()/len(g), 1)))
-pd.DataFrame(ytd).to_csv(os.path.join(D, "jan_sep_comparison.csv"), index=False)
+ytd = pd.DataFrame(ytd); ytd["value_basis"] = ytd.year.map(lambda y: "Jan-Jun same-day; Jul-Sep consolidated Live+7" if y == 2023 else
+    ("Jan-Jun Live+7; Jul-Sep Live+28 incl. online" if y == 2024 else basis(pd.Timestamp(f"{y}-06-30"))))
+ytd.to_csv(os.path.join(D, "jan_sep_comparison.csv"), index=False)
+# Like-for-like comparisons: same calendar days in both periods (days missing in either period are dropped),
+# so CIM data gaps (e.g. 13:00 on 25 Jan-5 Mar 2023) do not bias the comparison.
+LFL = [("Jan-Dec 2017 vs Jan-Dec 2022", "2017-01-01", "2022-01-01", 12, "yes: both same-day"),
+       ("Jan-Jun 2017 vs Jan-Jun 2023", "2017-01-01", "2023-01-01", 6, "yes: both same-day"),
+       ("Jan-Jun 2022 vs Jan-Jun 2023", "2022-01-01", "2023-01-01", 6, "yes: both same-day"),
+       ("Jul-Dec 2022 vs Jul-Dec 2023", "2022-07-01", "2023-07-01", 6, "NO: same-day vs consolidated Live+7 (straddles 1 Jul 2023)"),
+       ("Jul-Dec 2023 vs Jul-Dec 2024", "2023-07-01", "2024-07-01", 6, "NO: Live+7 vs Live+28 incl. online (straddles 1 Jul 2024)"),
+       ("Jul-Dec 2024 vs Jul-Dec 2025", "2024-07-01", "2025-07-01", 6, "yes: both Live+28 incl. online"),
+       ("Jan-Sep 2025 vs Jan-Sep 2026", "2025-01-01", "2026-01-01", 9, "yes: both Live+28 incl. online"),
+       ("Jan-Dec 2017 vs Jan-Dec 2025 (headline)", "2017-01-01", "2025-01-01", 12, "NO: same-day vs Live+28 incl. online")]
+lfl = []
+for k, s in series.items():
+    v = s["viewers"]
+    for name, a0, b0, nm, ok in LFL:
+        a0, b0 = pd.Timestamp(a0), pd.Timestamp(b0)
+        A = v[(v.index >= a0) & (v.index < a0 + pd.DateOffset(months=nm))]; B = v[(v.index >= b0) & (v.index < b0 + pd.DateOffset(months=nm))]
+        A.index = A.index.strftime("%m-%d"); B.index = B.index.strftime("%m-%d")
+        common = A.index.intersection(B.index)
+        ma, mb = A[common].mean(), B[common].mean()
+        lfl.append(dict(comparison=name, broadcast=k, matched_days=len(common), mean_a=round(ma), mean_b=round(mb),
+                        change_pct=round(100 * (mb / ma - 1), 1), like_for_like=ok,
+                        method="own calculation: mean over calendar days present in both periods", source_url=CIM))
+pd.DataFrame(lfl).to_csv(os.path.join(D, "like_for_like_comparisons.csv"), index=False)
 # monthly
 mon = []
 for k, s in series.items():
@@ -80,10 +116,12 @@ for k, (col, ls, mk) in sty.items():
             ax.annotate(f"{yv/1000:.0f}k", (x, yv/1000), textcoords="offset points", xytext=(0, 8), ha="center", fontsize=8, color=col)
 ax.axvspan(2019.5, 2021.5, color="grey", alpha=.08); ax.text(2020.5, ax.get_ylim()[1]*0.97, "COVID-19 years", ha="center", fontsize=8, color="grey")
 ax.axvline(2019.5, color="k", ls="--", lw=.8); ax.text(2019.55, 120, "CIM adds online\nviewing (2020→)", fontsize=7.5)
+for x, t, ha in [(2023.0, "1 Jul 2023: daily figures\nconsolidated (+7 days) ", "right"), (2024.0, " 1 Jul 2024: +28 days\n incl. online", "left")]:
+    ax.axvline(x, color="k", ls="-.", lw=.8); ax.text(x, 40, t, fontsize=7, ha=ha)
 ax.set_xticks(range(2017, 2027)); ax.set_xticklabels([str(y) if y < 2026 else "2026\n(Jan–Oct 2)" for y in range(2017, 2027)])
 ax.set_ylabel("average viewers per broadcast (thousands)"); ax.set_ylim(0, None)
 ax.set_title("VRT NWS Journaal (Eén / VRT 1): average viewers per broadcast, 2017–2026 (all days)\n"
-             "Source: CIM daily Top 20, Flanders + Dutch-speaking Brussels, 4+, Live+VOSDAL(+online from 2020)", fontsize=10.5)
+             "Source: CIM daily Top 20, Flanders + Dutch-speaking Brussels, 4+. Same-day (Live+VOSDAL) to Jun 2023, consolidated after (see breaks)", fontsize=10)
 ax.legend(fontsize=8.5, loc="lower left"); ax.grid(alpha=.3)
 fig.tight_layout(); fig.savefig(os.path.join(C, "annual_journaal_13u_19u.png"), dpi=150); plt.close(fig)
 
@@ -102,13 +140,14 @@ ev = [("2020-03-15", "COVID-19 lockdown"), ("2020-11-30", "Martine Tanghe\nfarew
       ("2023-05-01", "Eén → VRT 1"), ("2024-06-09", "Elections\n9 June 2024")]
 for d, t in ev:
     x = pd.Timestamp(d); ax.axvline(x, color="grey", lw=.7, ls="--"); ax.text(x, top * 0.99, t, fontsize=7.2, rotation=90, va="top", ha="right", color="dimgrey")
-for d, t in [("2020-01-01", "online added"), ("2021-06-11", "online live streams added")]:
+for d, t in [("2020-01-01", "online added"), ("2021-06-11", "online live streams added"),
+             ("2023-07-01", "daily figures consolidated (+7 days)"), ("2024-07-01", "+28 days incl. online")]:
     x = pd.Timestamp(d); ax.axvline(x, color="k", lw=.9, ls="-.")
     ax.text(x, 60, t, fontsize=7, rotation=90, va="bottom", ha="left")
 ax.set_ylim(0, top); ax.set_ylabel("viewers (thousands)")
 ax.xaxis.set_major_locator(mdates.YearLocator()); ax.xaxis.set_major_formatter(mdates.DateFormatter("%Y"))
 ax.set_title("VRT NWS Journaal 13:00 and 19:00 – monthly average viewers, Oct 2016 – Sep 2026\n"
-             "Source: CIM daily Top 20 (North, 4+, Live+VOSDAL; online viewing incl. from 2020)\nThin = monthly average · thick = 12-month rolling average · dash-dot = CIM method changes", fontsize=10)
+             "Source: CIM daily Top 20 (North, 4+; same-day Live+VOSDAL to Jun 2023, consolidated from Jul 2023; online incl. from 2020)\nThin = monthly average · thick = 12-month rolling average · dash-dot = CIM method changes", fontsize=10)
 ax.legend(fontsize=8.5, loc="lower left"); ax.grid(alpha=.3)
 fig.tight_layout(); fig.savefig(os.path.join(C, "monthly_journaal_13u_19u.png"), dpi=150); plt.close(fig)
 print(ann[ann.broadcast.str.startswith("VRT")].to_string())
@@ -125,12 +164,12 @@ def add(year, broadcast, metric, value, unit, src_name, src_url, note=""):
     M.append(dict(year=year, broadcast=broadcast, metric=metric, value=value, unit=unit, source=src_name, source_url=src_url, notes=note))
 for _, r in ann.iterrows():
     part = "partial year: " + r.period if r.year in (2016, 2026) else ""
-    meth = "Live+VOSDAL+Guests, TV only" if r.year < 2020 else "Live+VOSDAL+Guests + same-day online (online live streams counted from 11 Jun 2021)"
+    meth = year_basis(r.year) + ("; online live streams counted from 11 Jun 2021" if r.year >= 2021 else "")
     note = "; ".join(x for x in [part, meth, f"coverage {r.coverage_pct}% of {r.cim_days_available} CIM days"] if x)
     add(r.year, r.broadcast, "avg viewers per broadcast (all days)", r.mean_viewers_days_in_top20, "viewers", "CIM daily Top 20 (computed)", CIM, note)
     add(r.year, r.broadcast, "avg viewers per broadcast (Mon-Fri)", r.weekday_mean, "viewers", "CIM daily Top 20 (computed)", CIM, note)
     add(r.year, r.broadcast, "median viewers per broadcast", r.median_viewers_days_in_top20, "viewers", "CIM daily Top 20 (computed)", CIM, note)
-    add(r.year, r.broadcast, "best day of year", r.max_viewers, "viewers", "CIM daily Top 20", CIM, f"date {r.max_date}; {meth}")
+    add(r.year, r.broadcast, "best day of year", r.max_viewers, "viewers", "CIM daily Top 20", CIM, f"date {r.max_date}; {basis(pd.Timestamp(r.max_date))}")
 # Published figures (copied verbatim from the cited documents)
 reach = {2016: (1919559, 32.0, 63.7), 2017: (1841411, 30.7, 61.1), 2018: (1784923, 29.4, 59.7), 2019: (1749894, 28.9, 58.3), 2020: (1987954, 32.9, 60.3)}
 for y, (n, pct, wk) in reach.items():

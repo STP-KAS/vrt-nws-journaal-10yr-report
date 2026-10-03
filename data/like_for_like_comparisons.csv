@@ -1,0 +1,33 @@
+comparison,broadcast,matched_days,mean_a,mean_b,change_pct,like_for_like,method,source_url
+Jan-Dec 2017 vs Jan-Dec 2022,VRT 19:00 Journaal,357,902212,839998,-6.9,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Jun 2017 vs Jan-Jun 2023,VRT 19:00 Journaal,180,922315,840314,-8.9,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Jun 2022 vs Jan-Jun 2023,VRT 19:00 Journaal,180,909501,840875,-7.5,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2022 vs Jul-Dec 2023,VRT 19:00 Journaal,181,770226,802789,4.2,NO: same-day vs consolidated Live+7 (straddles 1 Jul 2023),own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2023 vs Jul-Dec 2024,VRT 19:00 Journaal,182,801924,788803,-1.6,NO: Live+7 vs Live+28 incl. online (straddles 1 Jul 2024),own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2024 vs Jul-Dec 2025,VRT 19:00 Journaal,182,788803,775086,-1.7,yes: both Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Sep 2025 vs Jan-Sep 2026,VRT 19:00 Journaal,270,790308,751786,-4.9,yes: both Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Dec 2017 vs Jan-Dec 2025 (headline),VRT 19:00 Journaal,361,901084,800932,-11.1,NO: same-day vs Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Dec 2017 vs Jan-Dec 2022,VRT 13:00 Journaal,357,396534,426303,7.5,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Jun 2017 vs Jan-Jun 2023,VRT 13:00 Journaal,137,391604,396261,1.2,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Jun 2022 vs Jan-Jun 2023,VRT 13:00 Journaal,137,434178,396250,-8.7,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2022 vs Jul-Dec 2023,VRT 13:00 Journaal,181,399026,385591,-3.4,NO: same-day vs consolidated Live+7 (straddles 1 Jul 2023),own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2023 vs Jul-Dec 2024,VRT 13:00 Journaal,184,385463,382302,-0.8,NO: Live+7 vs Live+28 incl. online (straddles 1 Jul 2024),own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2024 vs Jul-Dec 2025,VRT 13:00 Journaal,183,382101,337222,-11.7,yes: both Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Sep 2025 vs Jan-Sep 2026,VRT 13:00 Journaal,269,359825,343655,-4.5,yes: both Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Dec 2017 vs Jan-Dec 2025 (headline),VRT 13:00 Journaal,360,396361,357500,-9.8,NO: same-day vs Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Dec 2017 vs Jan-Dec 2022,VTM NIEUWS 19:00 (context),363,556732,593085,6.5,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Jun 2017 vs Jan-Jun 2023,VTM NIEUWS 19:00 (context),180,568691,579655,1.9,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Jun 2022 vs Jan-Jun 2023,VTM NIEUWS 19:00 (context),181,613219,579513,-5.5,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2022 vs Jul-Dec 2023,VTM NIEUWS 19:00 (context),184,573809,573744,-0.0,NO: same-day vs consolidated Live+7 (straddles 1 Jul 2023),own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2023 vs Jul-Dec 2024,VTM NIEUWS 19:00 (context),183,573630,508584,-11.3,NO: Live+7 vs Live+28 incl. online (straddles 1 Jul 2024),own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2024 vs Jul-Dec 2025,VTM NIEUWS 19:00 (context),183,508584,520797,2.4,yes: both Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Sep 2025 vs Jan-Sep 2026,VTM NIEUWS 19:00 (context),270,524298,504788,-3.7,yes: both Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Dec 2017 vs Jan-Dec 2025 (headline),VTM NIEUWS 19:00 (context),363,556732,531665,-4.5,NO: same-day vs Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Dec 2017 vs Jan-Dec 2022,VTM NIEUWS 13:00 (context),296,222928,240170,7.7,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Jun 2017 vs Jan-Jun 2023,VTM NIEUWS 13:00 (context),124,221066,232938,5.4,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Jun 2022 vs Jan-Jun 2023,VTM NIEUWS 13:00 (context),139,241786,232893,-3.7,yes: both same-day,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2022 vs Jul-Dec 2023,VTM NIEUWS 13:00 (context),175,233398,229158,-1.8,NO: same-day vs consolidated Live+7 (straddles 1 Jul 2023),own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2023 vs Jul-Dec 2024,VTM NIEUWS 13:00 (context),163,230250,204620,-11.1,NO: Live+7 vs Live+28 incl. online (straddles 1 Jul 2024),own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jul-Dec 2024 vs Jul-Dec 2025,VTM NIEUWS 13:00 (context),165,204684,231386,13.0,yes: both Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Sep 2025 vs Jan-Sep 2026,VTM NIEUWS 13:00 (context),246,217108,231282,6.5,yes: both Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie
+Jan-Dec 2017 vs Jan-Dec 2025 (headline),VTM NIEUWS 13:00 (context),286,221195,222157,0.4,NO: same-day vs Live+28 incl. online,own calculation: mean over calendar days present in both periods,https://www.cim.be/nl/televisie

@@ -10,3 +10,4 @@ r_*.html
 vrm_*.html
 __pycache__/
 data/cim_daily_top20_news.csv
+cim_tv_page.html
