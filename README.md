@@ -1,29 +1,107 @@
 # VRT NWS Journaal — 10-year viewing report (13:00 and 19:00 news), 2016–2026
 
-A ten-year look at how many people in Flanders watch the two main daily TV news broadcasts of the Flemish public broadcaster VRT: **the 13:00 Journaal ("Het 1 uur-journaal")** and **the 19:00 Journaal ("Het 7 uur-journaal")** on Eén, which was renamed **VRT 1** on 1 May 2023.
+Ten years of viewing figures for the two main daily TV news broadcasts of the Flemish public broadcaster VRT: **the 13:00 Journaal ("Het 1 uur-journaal")** and **the 19:00 Journaal ("Het 7 uur-journaal")** on Eén, which became **VRT 1** on 1 May 2023.
 
-*Compiled 3 October 2026. Every number below comes with a source. If a figure could not be found, it says "not found"; nothing is estimated.*
+*Compiled 3 October 2026. Every figure has a source; anything that could not be found is marked "not found". Nothing is estimated.*
+
+**Contents:** [Why](#why) · [How](#how) · [Sources](#sources) · [Conclusion](#conclusion) · [Other](#other)
 
 ---
 
-## 1. Executive summary (plain English)
+## Why
 
-* **The 19:00 Journaal is still Flanders' most-watched daily programme, but its audience is slowly shrinking.** A typical broadcast had about **901,000 viewers in 2017** and **802,000 in 2025** (−11%). For January–September 2026 the average is **752,000**, which is 4.9% below the same months of 2025 ([CIM](https://www.cim.be/nl/televisie), computed from 3,645 daily Top-20s).
-* **The 13:00 Journaal follows the same curve at about 40–45% of the 19:00 audience:** **396,000 in 2017 → 357,000 in 2025** (−10%), and **344,000** so far in 2026 (−4.4% compared with January–September 2025).
-* **COVID-19 broke the trend.** In 2020 the 19:00 average jumped to **1.04 million** (+25% on 2019) and the 13:00 average to **457,000** (+28%). The two best-watched Journaals ever both fall in 2020: **1,748,370 viewers on 27 March 2020** (lockdown measures; [VRT annual report 2020](https://www.vrt.be/nl/assets/files/2024-09/VRT_jaarverslag2020_A4_030_pages_Compressed.pdf)) and **2,001,867 on 30 November 2020**, Martine Tanghe's last Journaal ([VRT NWS](https://www.vrt.be/vrtnws/nl/2020/11/30/martine-tanghe-op-bezoek-bij-koning-filip-ik-ben-blij-en-trots/)). From 2022 the audience fell back to pre-COVID levels, and it has kept slowly eroding since.
-* **The real drop in TV viewing is bigger than these numbers show.** From 2020 onwards CIM adds same-day **online viewing** (VRT MAX/app streams) to the TV figures. So the 2017–2019 numbers are TV only, and the 2020–2026 numbers are TV plus online. In other words, the online audience is partly hiding the decline on the TV set.
-* **VRT keeps its lead over VTM.** The 19:00 Journaal still draws about **60% of the combined VRT + VTM 19:00 news audience**, roughly the same share as in 2017 (61.8%). VTM NIEUWS 19u is declining as well (557k → 532k, 2017–2025), so this is a trend for TV news in general, not just for VRT.
-* **The wider picture points the same way.** The share of Flemish news users who watch TV evening news fell from **73% in 2017 to 51% in 2026** ([imec-SMIT-VUB, Digital News Report Flanders](https://smit.research.vub.be/en/policy-brief-93-digital-news-report-2025-wider-access-weaker-pull-more-channels-less-interest-and-a)). Meanwhile VRT NWS grows online: the "VRT NWS Journaal" was the **#2 most-watched video title on VRT MAX in 2024** ([VRT](https://communicatie.vrt.be/2024-het-jaar-van-een-nieuwe-groeispurt-voor-vrt-max)).
+The question: **how has viewing of the VRT NWS Journaal at 13:00 and 19:00 changed over the past ten years, and what drove the ups and downs?**
+
+The 19:00 Journaal has long been the most-watched daily programme in Flanders, and the 13:00 Journaal is its midday counterpart. At the same time, news habits are moving online (VRT MAX, the VRT NWS app, social media). This report gathers credible, sourced numbers into one place, as an overview of:
+* the year-by-year average audience for each broadcast;
+* the peaks (attacks, COVID-19, elections, war) and the long-term direction;
+* how the Journaal compares with its commercial rival VTM NIEUWS and with wider news-use surveys;
+* where the measurement method changed, so the trend is not misread.
+
+---
+
+## How
+
+**1. Main data: CIM daily Top 20.** CIM (Centrum voor Informatie over de Media) is Belgium's official audience-measurement body. Its public results page ([cim.be/nl/televisie](https://www.cim.be/nl/televisie)) lists the 20 most-watched programmes of each day (programmes longer than 15 minutes). The figures cover region North (Flanders + Dutch-speaking Brussels), viewers aged 4+ including guests, watching live or later on the same day ("Live+VOSDAL").
+* `scripts/cim_fetch.py` requested every day from 1 Sep 2016 to 2 Oct 2026, using the same request the public page makes. The archive starts in October 2016, which leaves **3,645 days with data**.
+* `scripts/parse_cim.py` extracts the news rows. A few malformed 2016–2017 rows and some autumn-2024 values with decimals (e.g. "971.420,70") are repaired and rounded, not dropped.
+* `scripts/analyse.py` picks the regular broadcasts by title and time slot: "HET 7 UUR-JOURNAAL" (or "VRT NWS JOURNAAL" in early 2023) at 18:45–19:30, and "HET 1 UUR-JOURNAAL" at 12:45–13:30. It then computes per year: the average over all days, the Monday–Friday average, the median and the best day. It also computes monthly averages, a 12-month rolling average, and a same-period (1 Jan – 30 Sep) comparison so the incomplete year 2026 can be read fairly.
+
+**2. Coverage check.** CIM only lists the Top 20, so a broadcast that falls below 20th place on a given day would be missing. In practice the 19:00 Journaal is captured on 98–100% of days and the 13:00 Journaal on 98–100% of days in every year except 2023 (88%, a CIM data gap; see [Other](#other)). The averages therefore cover nearly every broadcast. Coverage per year is listed in the table and in `data/annual_from_cim_daily_top20.csv`.
+
+**3. Methodology breaks (important for reading the trend).** CIM changed what it counts during the period:
+
+| From | Change | Effect on this report |
+|---|---|---|
+| 1 Jan 2016 | CIM currency becomes Live+7+Guests | The daily Top 20 used here is Live+VOSDAL+Guests (same-day viewing), so it is not affected. |
+| **1 Jan 2020** | CIM starts adding **online viewing** of full TV programmes ("alle schermen") | **2020+ figures include online viewers; 2016–2019 are TV only.** The 2020 rise is therefore partly a method effect, and the real post-2020 decline on TV is somewhat bigger than shown. |
+| 1 Jan 2021 | Online fragments counted | Same direction (small upward effect). |
+| **11 Jun 2021** | Online **live** streams counted | Same direction. Live streams of the Journaal on VRT MAX/VRT NWS app now count. |
+| 1 Mar 2021 | New definition of "Total TV" (affects market shares) | Market-share comparisons before and after 2021 carry a small break. |
+| 1 Jul 2024 | Weekly/yearly figures extended to 28 days after broadcast | Does **not** affect the daily Top 20 (Live+VOSDAL) used for the averages. It does affect CIM's yearly Top 100 "best broadcast" figures from H2 2024. |
+
+Source: [CIM TV reglement](https://www.cim.be/sites/default/files/2026-03/reglement_TELEVISIE.pdf) and the notes on [cim.be/nl/televisie](https://www.cim.be/nl/televisie). The two online changes are drawn on the monthly chart.
+
+**4. Published figures.** Single-day records, channel market shares, VRT's daily reach of all its journaal broadcasts, and VRT NWS online visitors are copied **verbatim** from VRT annual reports, VRM supervision reports, VRT NWS / VRT press releases and CIM's yearly tables. Each one carries its URL in `data/vrt_journaal_10yr_data.csv`.
+
+**5. Context figures.**
+* **VTM NIEUWS** 13:00 and 19:00 were extracted from the same CIM daily Top 20 with the same rules. That makes them directly comparable, and they serve only as a benchmark: is the decline VRT-specific or TV-news-wide?
+* **Survey data** from the Digital News Report Flanders (imec-SMIT-VUB) and from Statistiek Vlaanderen is quoted as published. These describe news *habits* (the share of people who watch TV news), not viewing figures, and are not mixed into the CIM numbers.
+
+---
+
+## Sources
+
+**Primary sources** (the organisation that measured or published the figure):
+
+| Source | Used for |
+|---|---|
+| CIM – TV results (daily Top 20, yearly Top 100, market shares): https://www.cim.be/nl/televisie | All per-broadcast averages, best days, VTM context, channel market share 2018–2025, yearly Top 100 peaks |
+| CIM – TV reglement: https://www.cim.be/sites/default/files/2026-03/reglement_TELEVISIE.pdf | Methodology breaks (2016, 2020, 2021, 2024) |
+| CIM – Methodology TV 2024: https://cim.be/sites/default/files/2026-03/methodologie_television_Methodologie_NL2024.pdf | Measurement background |
+| VRT annual report 2016: https://www.vrt.be/nl/assets/files/2024-09/VRTJaarverslag2016.pdf | Daily/weekly reach of journaals 2016, deredactie.be visitors |
+| VRT annual report 2017: https://www.vrt.be/nl/assets/files/2024-09/LRN-VRT-Jaarverslag-2017-web-low-2.pdf | Eén market share 2016–2017 (CIM/GfK) |
+| VRT annual report 2018: https://www.vrt.be/nl/assets/files/2024-09/VRTJaarverslag2018WEB.pdf | Journaal reach 2017–2018, VRT NWS update (14 Jun 2018), site/app visitors |
+| VRT annual report 2019: https://www.vrt.be/nl/assets/files/2024-09/VRT_Jaarverslag-2019-CORPS-lowlowres.pdf | Journaal reach 2019, site visitors |
+| VRT annual report 2020: https://www.vrt.be/nl/assets/files/2024-09/VRT_jaarverslag2020_A4_030_pages_Compressed.pdf | Journaal reach 2020, 27 Mar 2020 record (1,748,370), site visitors |
+| VRT annual reports 2021, 2024, 2025: https://www.vrt.be/nl/assets/files/2024-09/Jaarverslag2021.pdf · https://www.vrt.be/nl/assets/files/2025-06/Jaarverslag-2024.pdf · https://www.vrt.be/nl/assets/files/2026-07/JVS_2025_0.pdf | Checked; no journaal reach published (→ "not found") |
+| VRT press release, annual report 2025: https://communicatie.vrt.be/vrt-bereikt-recordaantal-vlamingen-en-versnelt-digitale-groei-in-2025 | Context (no journaal figure) |
+| VRT – 2024 VRT MAX year review: https://communicatie.vrt.be/2024-het-jaar-van-een-nieuwe-groeispurt-voor-vrt-max | VRT NWS Journaal = #2 video title on VRT MAX in 2024 |
+| VRT NWS – Martine Tanghe's last Journaal: https://www.vrt.be/vrtnws/nl/2020/11/30/martine-tanghe-op-bezoek-bij-koning-filip-ik-ben-blij-en-trots/ | 2,001,867 viewers, best-watched Journaal ever |
+| VRT NWS – Eén becomes VRT 1: https://www.vrt.be/vrtnws/nl/2023/04/28/een-wordt-vanaf-vandaag-vrt-1/ | Rename date 1 May 2023 |
+| VRM – supervision report VRT 2017: https://www.vlaamseregulatormedia.be/sites/default/files/2025-01/vrt2017.pdf | Journaal reach 2017, vrtnws.be visitors 2017 |
+| VRM – supervision report VRT 2020 (SD 2.1): https://www.vlaamseregulatormedia.be/nl/over-vrm/rapporten/2020/toezichtsrapport-vrt/toezichtsrapport-vrt-2020/strategische-doelstelling-2-0 | Confirms 2019/2020 journaal reach |
+| imec-SMIT-VUB – Digital News Report Flanders policy brief: https://smit.research.vub.be/en/policy-brief-93-digital-news-report-2025-wider-access-weaker-pull-more-channels-less-interest-and-a | Survey: TV evening news use 73% (2017) → 51% (2026) |
+| Statistiek Vlaanderen – Nieuwsgebruik: https://www.vlaanderen.be/statistiek-vlaanderen/media-en-mediagebruik/nieuwsgebruik | Survey: weekly TV news use 70% (2025), −8 pp vs 2021 |
+
+**Secondary sources** (media or reference works reporting other people's data):
+
+| Source | Used for |
+|---|---|
+| Showbizzsite – viewing figures 22 March 2016 (reproduces the CIM day top 10): https://www.showbizzsite.be/nieuws/kijkcijfers-dinsdag-22-maart-2016-1499876 | Brussels attacks day (before the CIM online archive starts) |
+| TVvisie – KIES24 viewing figures: https://tvvisie.be/nieuws/belgie/kijkcijfers-meer-dan-2-miljoen-kijkers-voor-kies24-op-vrt-1_131238/ | Election night 9 June 2024 |
+| Wikipedia – VRT NWS journaal: https://nl.wikipedia.org/wiki/VRT_NWS_journaal | Format/studio timeline only (2016 studio, 2021 studio, 2022 rename); no viewing figures taken from it |
+
+---
+
+## Conclusion
+
+**In one sentence:** the 19:00 Journaal is still Flanders' biggest daily programme, but it and the 13:00 Journaal have lost about a tenth of their audience since 2017. COVID-19 interrupted that decline in 2020–2021, and since 2022 the slide has continued at a slow, steady pace.
+
+* **19:00 Journaal:** about **901,000 viewers per broadcast in 2017**, **802,000 in 2025** (−11%), and **752,000** for January–September 2026, which is 4.9% below the same months of 2025.
+* **13:00 Journaal:** **396,000 (2017) → 357,000 (2025)** (−10%), and **344,000** so far in 2026 (−4.4% compared with January–September 2025). It stays at about 40–45% of the 19:00 audience.
+* **COVID-19 peak:** in 2020 the averages reached **1.04 million** (19:00, +25% on 2019) and **457,000** (13:00, +28%). The two best-watched Journaals ever both fall in 2020: **1,748,370 on 27 March** ([VRT annual report 2020](https://www.vrt.be/nl/assets/files/2024-09/VRT_jaarverslag2020_A4_030_pages_Compressed.pdf)) and **2,001,867 on 30 November**, Martine Tanghe's last Journaal ([VRT NWS](https://www.vrt.be/vrtnws/nl/2020/11/30/martine-tanghe-op-bezoek-bij-koning-filip-ik-ben-blij-en-trots/)).
+* **The decline on the TV set is bigger than shown.** Since 2020, same-day online viewing is included in the figures. The online audience is partly masking the drop in traditional TV viewing.
+* **This is a TV-news-wide trend.** VTM NIEUWS 19u fell from 557k to 532k (2017–2025). VRT keeps about **60% of the combined VRT + VTM 19:00 news audience** (61.8% in 2017).
+* **Habits confirm it:** the share of Flemish news users who watch TV evening news fell from 73% (2017) to 51% (2026) (imec-SMIT-VUB). Meanwhile the Journaal does well online: it was the #2 video title on VRT MAX in 2024 (VRT).
 
 ![Annual averages](charts/annual_journaal_13u_19u.png)
 
 ![Monthly trend](charts/monthly_journaal_13u_19u.png)
 
----
+### Results: year by year
 
-## 2. Year-by-year overview
-
-Viewers per broadcast come from the **CIM daily Top 20**: region North (Flanders + Dutch-speaking Brussels), age 4+, guests included, Live+VOSDAL (watched live or later on the same day). From 2020 they also include same-day online viewing (see §4). "Avg" is the mean over every day of that year on which the broadcast appeared in the Top 20.
+The per-broadcast columns are computed from the CIM daily Top 20 (North, 4+, Live+VOSDAL; same-day online included from 2020). "Avg" is the mean over all days of that year on which the broadcast was captured.
 
 | Year | **19:00** avg/broadcast | 19:00 avg Mon–Fri | 19:00 best day | **13:00** avg/broadcast | 13:00 avg Mon–Fri | 13:00 best day | 13:00 days captured | Eén/VRT 1 channel market share (%) ¹ | Daily reach of all VRT TV journaals ² |
 |---|---|---|---|---|---|---|---|---|---|
@@ -53,9 +131,7 @@ Viewers per broadcast come from the **CIM daily Top 20**: region North (Flanders
 
 **Best-watched 19:00 Journaal per year in CIM's yearly Top 100** (a different metric: Live+7, including online where applicable, in thousands): 2018 – 1,337.9 (18 Jun) · 2019 – 1,134.7 (21 Jan) · 2020 – **2,030.6 (30 Nov)** · 2021 – 1,367.7 (20 Jan) · 2022 – 1,229.3 (24 Feb, Russia invades Ukraine) · 2023 – 1,199.3 (20 Mar) · 2024 – 1,178.3 (1 Jul) · 2025 – 1,084.0 (27 Jan). Each year's peak is lower than the year before, except in 2020–2021. Source: [CIM yearly Top 100](https://www.cim.be/nl/televisie).
 
----
-
-## 3. Key events and changes (timeline)
+### Key events
 
 | Date | Event | Viewing impact (source) |
 |---|---|---|
@@ -74,49 +150,29 @@ Viewers per broadcast come from the **CIM daily Top 20**: region North (Flanders
 
 ---
 
-## 4. Methodology and caveats (read before comparing years)
+## Other
 
-**Data source.** CIM (Centrum voor Informatie over de Media) is Belgium's official audience-measurement body. For each day since October 2016 its public site ([cim.be/nl/televisie](https://www.cim.be/nl/televisie)) lists the 20 most-watched programmes of that day (programmes longer than 15 minutes). `scripts/cim_fetch.py` downloaded every available day from 1 Sep 2016 to 2 Oct 2026: **3,645 days with data**. The script uses the same request the public page makes. `scripts/parse_cim.py` extracts the news rows and `scripts/analyse.py` builds the yearly and monthly averages. Both broadcasts are almost always in the Top 20 (the 19:00 on 98–100% of days, the 13:00 on 98–100% except in 2023), so the averages cover nearly every broadcast.
+**Data gaps**
+* **25 Jan – 5 Mar 2023:** CIM's daily Top 20 lists only afternoon and evening programmes in this period (CIM does not explain why on its results page), so the **13:00 Journaal is missing for ~40 days** and 2023 coverage is 88%. The 19:00 Journaal is present (titled "VRT NWS JOURNAAL" at the time).
+* Days with no CIM data at all: 1–30 Sep 2016, 31 Oct 2016, 4 May 2017, 23 Dec 2017, 14–15 Aug 2019, 20–22 Mar 2026 (and 2 Oct 2026, not yet published).
+* **Official yearly averages** for the 13:00/19:00 Journaal are not published by VRT or CIM in any source found. The yearly averages here are computed from CIM's public daily data.
+* **Market share of the Journaal itself** per year: not found (only the channel's market share is given).
+* **Daily reach of all VRT journaals, 2021–2025:** not found (VRT annual reports stopped publishing it).
+* **Online/VRT MAX viewers of the Journaal as a separate series:** not found (CIM folds online viewing into the totals).
+* **2016 before October:** not in the CIM online archive. Only single days are available via press reports (e.g. 22 Mar 2016).
 
-**Methodology breaks. These affect how you read the trend:**
+**Corrections**
+* The channel **Eén was renamed VRT 1 on 1 May 2023** ([VRT NWS](https://www.vrt.be/vrtnws/nl/2023/04/28/een-wordt-vanaf-vandaag-vrt-1/)), not in 2025 as first assumed in the brief. In CIM's data the channel name switches from "EEN" to "VRT 1" on 2 May 2023. There is no break in the figures.
+* The two sources for the Tanghe farewell differ slightly: VRT NWS reports 2,001,867, while the CIM daily Top 20 shows 2,008,425 and the CIM yearly Top 100 shows 2,030.6k (a different metric, Live+7). This report quotes VRT's figure for the record and shows CIM's figures where CIM data is used.
 
-| From | Change | Effect on this report |
-|---|---|---|
-| 1 Jan 2016 | CIM currency becomes Live+7+Guests | The daily Top 20 used here is Live+VOSDAL+Guests (same-day viewing), so it is not affected. |
-| **1 Jan 2020** | CIM starts adding **online viewing** of full TV programmes ("alle schermen") | **2020+ figures include online viewers; 2016–2019 are TV only.** The 2020 rise is therefore partly a method effect, and the real post-2020 decline on TV is somewhat bigger than shown. |
-| 1 Jan 2021 | Online fragments counted | Same direction (small upward effect). |
-| **11 Jun 2021** | Online **live** streams counted | Same direction. Live streams of the Journaal on VRT MAX/VRT NWS app now count. |
-| 1 Mar 2021 | New definition of "Total TV" (affects market shares) | Market-share comparisons before and after 2021 carry a small break. |
-| 1 Jul 2024 | Weekly/yearly figures extended to 28 days after broadcast | Does **not** affect the daily Top 20 (Live+VOSDAL) used for the averages. It does affect CIM's yearly Top 100 "best broadcast" figures from H2 2024. |
+**Limitations**
+* The daily-Top-20 metric (Live+VOSDAL) is **lower** than the Live+7 figures VRT sometimes quotes in press releases. Compare only like with like.
+* 2016 covers October–December only, the strongest TV season. Do not compare it with full years. 2026 covers 1 January – 1 October. Use the same-period table for a fair comparison.
+* Strong seasonality: for the 19:00 Journaal, July–August is typically 20–30% below the winter months (Nov–Feb), e.g. 689k vs 884k in 2025. Use the 12-month rolling average to read the trend.
+* Days when the broadcast was moved or replaced (election nights such as 9 June 2024, big live sport) are missing or show up as outliers. For example, the 13:00 Journaal of Sunday 1 Aug 2021 (1,254,726 viewers) started late at 13:23. The cause was not verified; it was probably a lead-in from preceding live coverage.
+* VTM figures are context only. They use the same CIM method, but no editorial comparison is made.
 
-Sources for these breaks: [CIM TV reglement](https://www.cim.be/sites/default/files/2026-03/reglement_TELEVISIE.pdf) and the notes on [cim.be/nl/televisie](https://www.cim.be/nl/televisie).
-
-Other points:
-* The daily-Top-20 metric (Live+VOSDAL) is **lower** than the "official" Live+7 figures VRT sometimes quotes in press releases. Compare only figures that use the same metric.
-* 2016 covers October–December only (the CIM archive starts in Oct 2016). That is the strongest TV season, so do not compare it with full years. 2026 covers 1 January – 1 October. Use the January–September table for a fair comparison.
-* Strong seasonality: for the 19:00 Journaal, July–August is typically 20–30% below the winter months (Nov–Feb), e.g. 689k vs 884k in 2025 (see the monthly chart). Use the 12-month rolling average to read the trend.
-* On a few days a broadcast was moved or replaced (e.g. election nights, big live sport). Those days are missing or marked as outliers. One example is the 13:00 Journaal of Sunday 1 Aug 2021 (1,254,726 viewers), which started late at 13:23. It is the highest 13:00 figure in the dataset. The cause was not verified; it was probably a lead-in from preceding live coverage.
-* The 2024 CIM data for some autumn days carries decimals ("971.420,70"). These were rounded, not dropped.
-
-## 5. Data gaps
-
-* **25 Jan – 5 Mar 2023:** CIM's daily Top 20 contains only afternoon/evening programmes (CIM was moving to a new measurement system at the time), so the **13:00 Journaal is missing for ~40 days**. That is why the 13:00 coverage for 2023 is 88%. The 19:00 Journaal is present (titled "VRT NWS JOURNAAL" in that period).
-* Days with no CIM data: 1–30 Sep 2016, 31 Oct 2016, 4 May 2017, 23 Dec 2017, 14–15 Aug 2019, 20–22 Mar 2026 (and 2 Oct 2026, not yet published).
-* **Official yearly averages for the 13:00 and 19:00 Journaal** (e.g. "the Journaal averaged X viewers in 2023") are **not published** by VRT or CIM in any source found. The yearly averages here are computed from CIM's public daily data.
-* **Market share of the Journaal itself** (as opposed to the channel) per year: **not found** in public sources.
-* **Daily reach of all VRT journaals, 2021–2025:** not found. VRT annual reports stopped publishing it.
-* **Online/VRT MAX viewers of the Journaal as a separate series:** not found (CIM only folds online viewing into the totals). Only the 2024 VRT MAX ranking (#2 title) is public.
-* **2016 full-year** daily figures for the 13:00/19:00: not found in the CIM archive (it starts Oct 2016). Only single days (e.g. 22 Mar 2016) are available via press reports.
-
-## 6. Context
-
-* **VTM NIEUWS (the commercial competitor), CIM same method:** 19:00 average 556,732 (2017) → 531,521 (2025) → 504,843 (2026 YTD); 13:00 average roughly 220k–250k, except in 2020 (302k). See `data/annual_from_cim_daily_top20.csv`.
-* **VRT NWS online (daily unique visitors):** 270,140 site + 63,437 app (2016, deredactie.be) → 401,971 (2017) → 446,928 site + 150,496 app (2018) → 550,714 (2019) → **960,009 (2020)**. Sources: VRT annual reports 2016/2018/2019/2020, [VRM supervision report 2017](https://www.vlaamseregulatormedia.be/sites/default/files/2025-01/vrt2017.pdf).
-* **News habits survey:** 70% of Flemish adults followed TV news at least weekly in autumn 2025, down 8 percentage points since 2021 ([Statistiek Vlaanderen](https://www.vlaanderen.be/statistiek-vlaanderen/media-en-mediagebruik/nieuwsgebruik)). Watching TV evening news among Flemish news users went from 73% (2017) to 51% (2026), and among young people from ~60% to about one in three ([imec-SMIT-VUB, Digital News Report](https://smit.research.vub.be/en/policy-brief-93-digital-news-report-2025-wider-access-weaker-pull-more-channels-less-interest-and-a)).
-
----
-
-## 7. Files
+**Repository guide**
 
 | Path | What |
 |---|---|
@@ -124,36 +180,14 @@ Other points:
 | `data/annual_from_cim_daily_top20.csv` | Yearly stats per broadcast (VRT 13:00/19:00, VTM 13:00/19:00): days covered, coverage %, mean, Mon–Fri mean, median, best day. |
 | `data/jan_sep_comparison.csv` | 1 Jan–30 Sep averages for every year (fair comparison with 2026). |
 | `data/monthly_from_cim_daily_top20.csv` | Monthly averages. |
-| `data/daily_journaal_viewers.csv` | Every captured broadcast, day by day (viewers, Top-20 rank, start time, duration). |
-| `data/cim_daily_top20_news.csv` | All news rows found in the CIM daily Top 20. |
+| `data/daily_journaal_viewers.csv` | Every captured broadcast, day by day (viewers, Top-20 rank, start time, duration) with source URL and metric. |
 | `data/cim_days_available.csv` | Days for which CIM returned a Top 20 (the denominator for coverage). |
 | `charts/*.png` | The two charts above. |
 | `scripts/` | `cim_fetch.py` (download), `parse_cim.py` (extract), `analyse.py` (aggregate + charts + master CSV). |
 
-To reproduce: `python scripts/cim_fetch.py 2016-09-01 2026-10-02 4 && python scripts/parse_cim.py && python scripts/analyse.py` (needs `requests`, `pandas`, `matplotlib`).
+To reproduce (Python with `requests`, `pandas`, `matplotlib`): `python scripts/cim_fetch.py 2016-09-01 2026-10-02 4 && python scripts/parse_cim.py && python scripts/analyse.py`. The fetch script caches CIM's responses in a local `raw/` folder, which is not part of this repository.
 
-## 8. Sources
-
-* CIM – TV results (daily Top 20, yearly Top 100, market shares): https://www.cim.be/nl/televisie
-* CIM – TV reglement (methodology breaks): https://www.cim.be/sites/default/files/2026-03/reglement_TELEVISIE.pdf
-* CIM – Methodology TV 2024: https://cim.be/sites/default/files/2026-03/methodologie_television_Methodologie_NL2024.pdf
-* VRT annual report 2016: https://www.vrt.be/nl/assets/files/2024-09/VRTJaarverslag2016.pdf
-* VRT annual report 2017: https://www.vrt.be/nl/assets/files/2024-09/LRN-VRT-Jaarverslag-2017-web-low-2.pdf
-* VRT annual report 2018: https://www.vrt.be/nl/assets/files/2024-09/VRTJaarverslag2018WEB.pdf
-* VRT annual report 2019: https://www.vrt.be/nl/assets/files/2024-09/VRT_Jaarverslag-2019-CORPS-lowlowres.pdf
-* VRT annual report 2020: https://www.vrt.be/nl/assets/files/2024-09/VRT_jaarverslag2020_A4_030_pages_Compressed.pdf
-* VRT annual report 2021: https://www.vrt.be/nl/assets/files/2024-09/Jaarverslag2021.pdf
-* VRT annual report 2024: https://www.vrt.be/nl/assets/files/2025-06/Jaarverslag-2024.pdf
-* VRT annual report 2025 + press release: https://www.vrt.be/nl/assets/files/2026-07/JVS_2025_0.pdf · https://communicatie.vrt.be/vrt-bereikt-recordaantal-vlamingen-en-versnelt-digitale-groei-in-2025
-* VRM – supervision report VRT 2017: https://www.vlaamseregulatormedia.be/sites/default/files/2025-01/vrt2017.pdf
-* VRM – supervision report VRT 2020 (SD 2.1): https://www.vlaamseregulatormedia.be/nl/over-vrm/rapporten/2020/toezichtsrapport-vrt/toezichtsrapport-vrt-2020/strategische-doelstelling-2-0
-* VRT NWS – Martine Tanghe's last Journaal, 2,001,867 viewers: https://www.vrt.be/vrtnws/nl/2020/11/30/martine-tanghe-op-bezoek-bij-koning-filip-ik-ben-blij-en-trots/
-* VRT NWS – Eén becomes VRT 1 (1 May 2023): https://www.vrt.be/vrtnws/nl/2023/04/28/een-wordt-vanaf-vandaag-vrt-1/
-* VRT – 2024 VRT MAX year review: https://communicatie.vrt.be/2024-het-jaar-van-een-nieuwe-groeispurt-voor-vrt-max
-* Showbizzsite – viewing figures 22 March 2016: https://www.showbizzsite.be/nieuws/kijkcijfers-dinsdag-22-maart-2016-1499876
-* TVvisie – KIES24 viewing figures (9 June 2024): https://tvvisie.be/nieuws/belgie/kijkcijfers-meer-dan-2-miljoen-kijkers-voor-kies24-op-vrt-1_131238/
-* imec-SMIT-VUB – Digital News Report Flanders policy brief: https://smit.research.vub.be/en/policy-brief-93-digital-news-report-2025-wider-access-weaker-pull-more-channels-less-interest-and-a
-* Statistiek Vlaanderen – Nieuwsgebruik: https://www.vlaanderen.be/statistiek-vlaanderen/media-en-mediagebruik/nieuwsgebruik
-* Wikipedia (secondary, format/studio timeline only): https://nl.wikipedia.org/wiki/VRT_NWS_journaal
-
-*Data © CIM and the respective publishers; reproduced here for non-commercial research with attribution.*
+**Data and reuse note**
+* The bulk raw downloads (one CIM HTML response per day, ~3,700 files) and the downloaded PDF reports are **not** published here. The reason is that CIM's public results carry no explicit open licence, and CIM's rules require correct source attribution. This repository contains only **derived tables** (the Journaal and VTM news rows plus yearly/monthly aggregates). Every row cites its source URL and metric.
+* The intermediate file with all news rows from the CIM Top 20 (`data/cim_daily_top20_news.csv`) is regenerated locally by `parse_cim.py` and is no longer tracked. It still exists in the first commit of the repository history.
+* Viewing data © CIM; report figures © VRT, VRM, imec-SMIT-VUB, Statistiek Vlaanderen and the cited media. Reuse should cite the original source as given here ("CIM TV – Noorden, 4+, Live+VOSDAL+Guests(+Online)" for CIM figures). The analysis code and the text of this README may be reused freely with attribution to this repository.

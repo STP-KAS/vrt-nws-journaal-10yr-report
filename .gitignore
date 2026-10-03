@@ -9,3 +9,4 @@ c2.js
 r_*.html
 vrm_*.html
 __pycache__/
+data/cim_daily_top20_news.csv

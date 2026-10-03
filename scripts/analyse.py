@@ -24,7 +24,9 @@ series = {
 daily = []
 for k, s in series.items():
     t = s[["viewers", "rank", "start", "duration"]].copy(); t["broadcast"] = k; daily.append(t.reset_index())
-daily = pd.concat(daily); daily.to_csv(os.path.join(D, "daily_journaal_viewers.csv"), index=False)
+daily = pd.concat(daily); daily["source_url"] = CIM
+daily["metric"] = "CIM daily Top 20, North, 4+, Live+VOSDAL+Guests (+same-day online from 2020)"
+daily.to_csv(os.path.join(D, "daily_journaal_viewers.csv"), index=False)
 
 def yr_stats(s, days, label):
     out = []
