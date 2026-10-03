@@ -1,0 +1,11 @@
+.venv/
+raw/
+raw_yearly/
+pdfs/
+*.log
+cim_test.html
+c1.js
+c2.js
+r_*.html
+vrm_*.html
+__pycache__/
