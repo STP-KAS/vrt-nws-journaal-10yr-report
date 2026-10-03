@@ -4,6 +4,8 @@ Ten years of viewing figures for the two main daily TV news broadcasts of the Fl
 
 *Compiled 3 October 2026. Every figure has a source; anything that could not be found is marked "not found". Nothing is estimated.*
 
+*Companion report on VRT's overall TV ratings (market shares versus DPG Media and Play, reach, VRT NU/VRT MAX, top programmes): [vrt-overall-ratings-10yr-report](https://github.com/STP-KAS/vrt-overall-ratings-10yr-report).*
+
 **Contents:** [Why](#why) · [How](#how) · [Sources](#sources) · [Conclusion](#conclusion) · [Other](#other)
 
 ---
